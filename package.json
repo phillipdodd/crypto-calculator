@@ -1,0 +1,23 @@
+{
+  "name": "crypto-calculator",
+  "version": "1.0.0",
+  "description": "simple calculator app for all those pesky decimals",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "engines": {
+    "node": "10.9.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/phillipdodd/crypto-calculator.git"
+  },
+  "keywords": [],
+  "author": "phillip dodd",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/phillipdodd/crypto-calculator/issues"
+  },
+  "homepage": "https://github.com/phillipdodd/crypto-calculator#readme"
+}
