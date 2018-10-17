@@ -19,5 +19,11 @@
   "bugs": {
     "url": "https://github.com/phillipdodd/crypto-calculator/issues"
   },
-  "homepage": "https://github.com/phillipdodd/crypto-calculator#readme"
+  "homepage": "https://github.com/phillipdodd/crypto-calculator#readme",
+  "devDependencies": {
+    "nodemon": "^1.18.4"
+  },
+  "dependencies": {
+    "express": "^4.16.4"
+  }
 }

@@ -8,6 +8,10 @@ Using this as a way to ultimately teach myself how to get a web app going.
 
 1. **Keeping it simple** - create a user interface out of plain 'ol vanilla HTML that has something to interact with that causes literally any type of code to run server-side in Node.js. Yes, the bar is high. I know.
 
+## Dependencies
+
+* Nodemon
+* Express
 
 ## Helpful Links
 
