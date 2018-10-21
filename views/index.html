@@ -5,14 +5,35 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>crypto-calculator</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
-    <script src="main.js"></script>
+    <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
+    <!-- <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script> -->
 </head>
 <body>
     
-    <form action="/startCounter">
-        <input type="submit" value="Start Counter">
-    </form>
+    <input id='messageinput' type='text'>
+    <button id='sendbutton'>Send Message</button>
+    <ul id="chatlog"></ul>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+        (function() {
+            var socket = io();
+            let button = document.getElementById("sendbutton"); 
+            button.addEventListener("click", function() {
+                let input = document.getElementById("messageinput"); 
+                socket.emit(
+                    'message', 
+                    input.value
+                );
+                input.value = '';
+                return false;
+            });
+            socket.on('message', function(message) {
+                    $('#chatlog').append(`<ol>${message}</ol>`)
+            });
+        })()
+    </script>
 
 </body>
 </html>

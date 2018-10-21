@@ -1,5 +1,6 @@
-const express = require('express');
-const app = express();
+const app = require('express')();
+const http = require('http').Server(app);
+const io = require('socket.io')(http);
 const port = process.env.PORT || 3000;
 const path = require('path');
 
@@ -12,6 +13,12 @@ app.get('/startCounter', (req, res) => {
     res.send('Started Counter!');
 });
 
+io.on('connect', function(socket) {
+    console.log('a user has connected');
+    socket.on('message', function(msg) {
+        io.emit('message', msg);
+    })
+})
 
 function startCounter() {
     var counter = 0;
@@ -21,4 +28,6 @@ function startCounter() {
     }, 1000);
 }
 
-app.listen(port, () => console.log(`Example app listening on port ${port}!`));
+http.listen(port, () => {
+    console.log(`Example app listening on port ${port}!`)
+});
